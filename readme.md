@@ -1,1 +1,3 @@
-# Hello world
+# Couter App
+
+## Features
