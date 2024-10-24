@@ -20,9 +20,12 @@
     <div>
       <h2>Counter App</h2>
       <p>Count: <span id="count-placeholder">0</span></p>
-      <button>Increment</button>
-      <button>Decrement</button>
+      <button data-by="-1" class="count-inc">Increment</button>
+      <button data-by="1" class="count-inc">Decrement</button>
     </div>
-    <script></script>
+    <script>
+      const increment = document.querySelector("count-inc");
+      const countPlaceholder = document.querySelector(".count-placeholder");
+    </script>
   </body>
 </html>
