@@ -8,7 +8,7 @@
       body {
         background-color: lightgray;
       }
-      count-placholder {
+      count-placeholder {
         color: azure;
       }
     </style>
@@ -20,12 +20,18 @@
     <div>
       <h2>Counter App</h2>
       <p>Count: <span id="count-placeholder">0</span></p>
-      <button data-by="-1" class="count-inc">Increment</button>
-      <button data-by="1" class="count-inc">Decrement</button>
+      <button data-by="-1" class="count-inc">Decrement</button>
+      <button data-by="1" class="count-inc">Increment</button>
     </div>
     <script>
-      const increment = document.querySelector("count-inc");
-      const countPlaceholder = document.querySelector(".count-placeholder");
+      const countPlaceholder = document.querySelector("#count-placeholder");
+      let count = 0;
+      document.querySelectorAll(".count-inc").forEach((ele) => {
+        ele.addEventListener("click", () => {
+          count += +ele.getAttribute("data-by");
+          countPlaceholder.textContent = count;
+        });
+      });
     </script>
   </body>
 </html>
